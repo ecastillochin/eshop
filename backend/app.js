@@ -23,6 +23,7 @@ app.use(`${api}/users`,usersRouter);
 app.use(`${api}/categories`,categoriesRouter);
 app.use(`${api}/orders`,ordersRouter);
 
+mongoose.set('strictQuery',false);
 mongoose.connect(process.env.CONNECTION_STRING,{dbname:'eshop-database'})
 .then(()=>{
     console.log('Connection ready...')
